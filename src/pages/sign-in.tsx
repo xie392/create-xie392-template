@@ -1,4 +1,6 @@
 import { signInApi } from '@/api/user'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import { useUserStore } from '@/stores/user'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -30,10 +32,8 @@ function SignInPage() {
                         <div>
                             <label className="text-base font-medium text-gray-900">用户名</label>
                             <div className="mt-2">
-                                <input
+                                <Input
                                     placeholder="用户名"
-                                    type="text"
-                                    className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                                     value={formData.username}
                                     onChange={(event) => setFormData({ ...formData, username: event.target.value })}
                                 />
@@ -44,22 +44,21 @@ function SignInPage() {
                                 <label className="text-base font-medium text-gray-900">密码</label>
                             </div>
                             <div className="mt-2">
-                                <input
+                                <Input
                                     placeholder="密码"
                                     type="password"
-                                    className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                                     value={formData.password}
                                     onChange={(event) => setFormData({ ...formData, password: event.target.value })}
                                 />
                             </div>
                         </div>
                         <div>
-                            <button
+                            <Button
                                 className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80 mb-3"
                                 type="submit"
                             >
                                 登录
-                            </button>
+                            </Button>
                         </div>
                     </div>
                 </form>
