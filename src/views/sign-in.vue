@@ -4,6 +4,9 @@ import { useUserStore } from '@/stores/user'
 import { reactive } from 'vue'
 import { useRouter } from 'vue-router'
 
+import Button from '@/components/ui/button.vue'
+import Input from '@/components/ui/input.vue'
+
 const formData = reactive({
   username: 'admin',
   password: '123456',
@@ -23,9 +26,6 @@ const submitHandler = async (event: Event) => {
   router.push('/')
   console.log(data)
 }
-
-const INPUT_CLASS = `flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm focus-visible:outline-none 
-focus-visible:ring-2 focus-visible:ring-black`
 </script>
 
 <template>
@@ -38,7 +38,7 @@ focus-visible:ring-2 focus-visible:ring-black`
           <div>
             <label class="text-base font-medium text-gray-900">用户名</label>
             <div class="mt-2">
-              <input :class="INPUT_CLASS" placeholder="用户名" v-model="formData.username" />
+              <Input placeholder="用户名" v-model="formData.username" />
             </div>
           </div>
           <div>
@@ -46,21 +46,11 @@ focus-visible:ring-2 focus-visible:ring-black`
               <label class="text-base font-medium text-gray-900">密码</label>
             </div>
             <div class="mt-2">
-              <input
-                :class="INPUT_CLASS"
-                placeholder="密码"
-                type="password"
-                v-model="formData.password"
-              />
+              <Input placeholder="密码" type="password" v-model="formData.password" />
             </div>
           </div>
           <div>
-            <button
-              class="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80 mb-3"
-              type="submit"
-            >
-              登录
-            </button>
+            <Button class="w-full" type="submit"> 登录 </Button>
           </div>
         </div>
       </form>

@@ -7,6 +7,9 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import pages from 'vite-plugin-pages'
 import { viteMockServe } from 'vite-plugin-mock'
 
+import autoprefixer from 'autoprefixer'
+import tailwind from 'tailwindcss'
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -25,6 +28,11 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
+  css: {
+    postcss: {
+      plugins: [tailwind(), autoprefixer()],
     },
   },
 })
