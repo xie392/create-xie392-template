@@ -5,25 +5,18 @@ on:
   push:
     branches:
       - master
-  # 当创建新的 Git 标签时触发
-  tags:
-    - "*"
+    # tags:
+    #   - v* # 匹配所有以 `v` 开头的 tag
 
 jobs:
   publish:
     runs-on: ubuntu-latest
 
     steps:
-      # 检出代码
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      # 设置 Node.js 环境
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: "lts/*" # 使用 LTS 版本
-          cache: "npm" # 缓存依赖
+          node-version: 20
 
       # 配置 npm 的 authToken
       - name: Configure npm
@@ -33,6 +26,10 @@ jobs:
       # 安装依赖
       - name: Install dependencies
         run: npm install
+
+      # 打包
+      - name: Build
+        run: npm run build
 
       # 发布到 npm
       - name: Publish to npm
