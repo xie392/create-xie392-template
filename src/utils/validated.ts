@@ -4,10 +4,5 @@ export function validatedAppName(appName: string): string | boolean {
   if (isChinese) {
     return "Please enter a valid English name";
   }
-  // 验证特殊字符
-  //   const specialChar = /[~`!#$%^&*()_+-=|{}':";'<>?,./\\]/;
-  //   if (specialChar.test(appName) && appName.trim() !== "") {
-  //     return "Please enter a valid name without special characters";
-  //   }
   return true;
 }

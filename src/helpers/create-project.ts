@@ -4,8 +4,9 @@ import degit from "degit";
 import path from "path";
 import { CommandOptions } from "~/command.js";
 import chalk from "chalk";
+import ora from "ora";
 
-const REPO = "gitee:xie392/template-cli";
+const REPO = "github:xie392/template-cli";
 
 export async function createProject(
   commandOptions: Omit<CommandOptions, "packages"> & {
@@ -20,16 +21,18 @@ export async function createProject(
 
   Logger.info(`\nCreating project in ${chalk.green(targetDir)}...`);
 
-  console.log("url；", emitter, targetDir);
+  const spinner = ora("Cloning repository...").start();
 
-  //   try {
-  //     await emitter.clone(targetDir);
-  //     console.log(chalk.green(`\nProject created successfully!`));
-  //     console.log(chalk.yellow(`\nNext steps:`));
-  //     console.log(chalk.cyan(`  cd ${commandOptions.name}`));
-  //     console.log(chalk.cyan(`  npm install`));
-  //     console.log(chalk.cyan(`  npm run dev`));
-  //   } catch (error) {
-  //     console.error(chalk.red("Error creating project:"), error.message);
-  //   }
+  try {
+    await emitter.clone(targetDir);
+    spinner.succeed("Repository cloned successfully!");
+    console.log(chalk.green(`\nProject created successfully!`));
+    console.log(chalk.yellow(`\nNext steps:`));
+    console.log(chalk.cyan(`  cd ${commandOptions.name}`));
+    console.log(chalk.cyan(`  npm install`));
+    console.log(chalk.cyan(`  npm run dev`));
+  } catch (error) {
+    spinner.fail("Error cloning repository.");
+    console.error(chalk.red("Error creating project:"), error.message);
+  }
 }

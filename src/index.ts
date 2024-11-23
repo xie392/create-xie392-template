@@ -14,6 +14,7 @@ async function main() {
       .action(async () => {
         const answer = await command();
         await createProject(answer);
+        process.exit(1);
       });
 
     program.parse(process.argv);
