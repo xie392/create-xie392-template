@@ -6,10 +6,9 @@ const defaultOptions = {
   name: "new-project",
   packages: [
     { value: "react", name: "React" },
+    { value: "react-shadcn", name: "React + Shadcn UI" },
     { value: "vue", name: "Vue" },
-    { value: "next", name: "Next" },
-    { value: "nuxt", name: "Nuxt" },
-    { value: "vanilla", name: "Vanilla JS" },
+    { value: "vue-shadcnt", name: "Vue + Shadcn UI" },
   ],
   languages: [
     { value: "typescript", name: "TypeScript" },
@@ -34,16 +33,9 @@ export async function command() {
       {
         type: "list",
         name: "packages",
-        message: "What framework do you want to use?",
+        message: "What template do you want to use?",
         choices: defaultOptions.packages,
         default: defaultOptions.flags.packageName,
-      },
-      {
-        type: "list",
-        name: "language",
-        message: "What language do you want to use?",
-        choices: defaultOptions.languages,
-        default: defaultOptions.flags.languageType,
       },
     ]);
     return answers;

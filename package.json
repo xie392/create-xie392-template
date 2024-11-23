@@ -18,6 +18,7 @@
   "dependencies": {
     "chalk": "^5.3.0",
     "commander": "^12.1.0",
+    "degit": "^2.8.4",
     "inquirer": "^12.1.0"
   }
 }
