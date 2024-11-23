@@ -1,23 +1,25 @@
 import inquirer from "inquirer";
 import { validatedAppName } from "~/utils/validated.js";
 import Logger from "~/utils/logger.js";
+import { Branch } from "~/enum.js";
 
-const defaultOptions = {
+export interface CommandPackages {
+  value: Branch;
+  name: string;
+}
+export interface CommandOptions {
+  name: string;
+  packages: CommandPackages[];
+}
+
+const defaultOptions: CommandOptions = {
   name: "new-project",
   packages: [
-    { value: "react", name: "React" },
-    { value: "react-shadcn", name: "React + Shadcn UI" },
-    { value: "vue", name: "Vue" },
-    { value: "vue-shadcnt", name: "Vue + Shadcn UI" },
+    { value: Branch.React, name: "React" },
+    { value: Branch.ReactShadcn, name: "React + Shadcn UI" },
+    { value: Branch.Vue, name: "Vue" },
+    { value: Branch.VueShadcn, name: "Vue + Shadcn UI" },
   ],
-  languages: [
-    { value: "typescript", name: "TypeScript" },
-    { value: "javascript", name: "JavaScript" },
-  ],
-  flags: {
-    packageName: "react",
-    languageType: "typescript",
-  },
 };
 
 export async function command() {
@@ -35,7 +37,6 @@ export async function command() {
         name: "packages",
         message: "What template do you want to use?",
         choices: defaultOptions.packages,
-        default: defaultOptions.flags.packageName,
       },
     ]);
     return answers;
