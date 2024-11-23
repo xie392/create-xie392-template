@@ -3,13 +3,19 @@
   "type": "module",
   "version": "1.0.0",
   "description": "",
+  "private": false,
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
-    "dev": "tsup --watch"
+    "dev": "tsup --watch",
+    "prepublishOnly": "npm run build"
   },
+  "exports": "./dist/index.js",
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "xie392@ymzdjiang@qq.com",
+  "license": "MIT",
   "devDependencies": {
     "@types/degit": "^2.8.6",
     "@types/node": "^22.9.0",
