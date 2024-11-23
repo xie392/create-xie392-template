@@ -3,10 +3,10 @@ name: Publish to npm
 on:
   # 当推送到特定分支时触发，比如 `main` 分支
   push:
-    branches:
-      - master
-    # tags:
-    #   - v* # 匹配所有以 `v` 开头的 tag
+    # branches:
+    #   - master
+    tags:
+      - v* # 匹配所有以 `v` 开头的 tag
 
 jobs:
   publish:
