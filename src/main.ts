@@ -2,13 +2,16 @@ import './styles/globals.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
-import App from './App.vue'
+import App from './app.vue'
 import router from './router'
+import { checkPermission } from './permission'
 
 const app = createApp(App)
+const pinia = createPinia().use(piniaPluginPersistedstate)
 
-app.use(createPinia())
-app.use(router)
+app.use(pinia).use(router).mount('#app')
 
-app.mount('#app')
+// Check permission
+checkPermission()
