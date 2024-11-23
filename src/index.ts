@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { command } from "~/command.js";
 import { Command } from "commander";
 import { createProject } from "~/helpers/create-project.js";

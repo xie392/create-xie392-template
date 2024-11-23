@@ -1,12 +1,15 @@
 {
   "name": "xie392-temp-cli",
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "private": false,
   "files": [
     "dist"
   ],
+  "bin": {
+    "create": "./dist/index.js"
+  },
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
