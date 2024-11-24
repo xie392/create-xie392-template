@@ -8,7 +8,6 @@ import { createProject } from "~/helpers/create-project.js";
 async function main() {
   try {
     const program = new Command();
-
     program
       .name(APP_NAME)
       .description("A CLI for creating web applications with the template")
@@ -17,7 +16,6 @@ async function main() {
         await createProject(answer);
         process.exit(1);
       });
-
     program.parse(process.argv);
   } catch (error) {
     console.log(chalk.red(error.message));

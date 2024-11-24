@@ -2,6 +2,7 @@ import { Branch } from "~/enum.js";
 import Logger from "~/utils/logger.js";
 import { validatedAppName } from "~/utils/validated.js";
 import inquirer from "inquirer";
+import { getBranchList } from "~/helpers/branch.js";
 
 const defaultOptions = {
   name: "new-project",
@@ -10,6 +11,8 @@ const defaultOptions = {
 
 export async function runCli() {
   try {
+    const branches = (await getBranchList()) ?? defaultOptions.packages;
+
     const answers = await inquirer.prompt([
       {
         type: "input",
@@ -22,7 +25,7 @@ export async function runCli() {
         type: "list",
         name: "branch",
         message: "What template do you want to use?",
-        choices: defaultOptions.packages,
+        choices: branches,
       },
     ]);
     return answers;
