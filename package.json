@@ -1,41 +1,26 @@
 {
-  "name": "create-xie392-template",
-  "type": "module",
-  "version": "0.0.0",
-  "description": "my project templates",
-  "private": false,
-  "files": [
-    "dist",
-    "README.md",
-    "package.json"
-  ],
-  "bin": {
-    "create-xie392-template": "./dist/index.js"
-  },
+  "name": "tt",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "prepublishOnly": "npm run build"
-  },
-  "exports": "./dist/index.js",
-  "keywords": [],
-  "author": "xie392 <ymzdjiang@qq.com> (https://xie392.cn)",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/degit": "^2.8.6",
-    "@types/node": "^22.9.0",
-    "tsup": "^8.3.5",
-    "typescript": "^5.6.3"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "chalk": "^5.3.0",
-    "commander": "^12.1.0",
-    "degit": "^2.8.4",
-    "inquirer": "^12.1.0",
-    "ora": "^8.1.1"
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-dom": "19.0.0-rc-66855b96-20241106",
+    "next": "15.0.3"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/xie392/template-cli.git"
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.3"
   }
 }

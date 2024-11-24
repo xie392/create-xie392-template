@@ -1,50 +1,40 @@
-# Ignore everything in this directory
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
- * 
-
-# Except this file !
-
-/logs
-
-# compiled output
-/dist
+# dependencies
 /node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
-/server/dist
-/client/dist
+# testing
+/coverage
 
-/upload
+# next.js
+/.next/
+/out/
 
-# Logs
-logs
-*.log
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
 npm-debug.log*
-pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-lerna-debug.log*
 
-# OS
-.DS_Store
+# env files (can opt-in for committing if needed)
+.env*
 
-# Tests
-/coverage
-/.nyc_output
+# vercel
+.vercel
 
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
-desktop.files.json
+# typescript
+*.tsbuildinfo
+next-env.d.ts
