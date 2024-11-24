@@ -3,8 +3,8 @@ name: Publish to npm
 on:
   # 当推送到特定分支时触发，比如 `main` 分支
   push:
-    # branches:
-    #   - master
+    branches:
+      - master
     tags:
       - v* # 匹配所有以 `v` 开头的 tag
 
@@ -17,6 +17,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
+
+      # 输出 npm-token
+      - name: Output npm-token
+        run: |
+          echo "NPM_TOKEN=${{ secrets.NPM_TOKEN }}"
 
       # 配置 npm 的 authToken
       - name: Configure npm
@@ -32,7 +37,7 @@ jobs:
         run: npm run build
 
       # 发布到 npm
-      - name: Publish to npm
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Publish to npm
+      #   run: npm publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

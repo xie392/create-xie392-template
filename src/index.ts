@@ -1,27 +1,26 @@
 #!/usr/bin/env node
-
-import { command } from "~/command.js";
 import { Command } from "commander";
+import chalk from "chalk";
+import { APP_NAME } from "~/constants.js";
+import { runCli } from "~/helpers/cli.js";
 import { createProject } from "~/helpers/create-project.js";
-import Logger from "./utils/logger.js";
 
 async function main() {
   try {
     const program = new Command();
 
     program
-      .name("create")
-      .version("1.0.0")
-      .description("A custom project scaffolding tool.")
+      .name(APP_NAME)
+      .description("A CLI for creating web applications with the template")
       .action(async () => {
-        const answer = await command();
+        const answer = await runCli();
         await createProject(answer);
         process.exit(1);
       });
 
     program.parse(process.argv);
   } catch (error) {
-    Logger.error(error.message);
+    console.log(chalk.red(error.message));
   }
 }
 

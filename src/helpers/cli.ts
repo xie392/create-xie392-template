@@ -1,12 +1,13 @@
-import inquirer from "inquirer";
-import { validatedAppName } from "~/utils/validated.js";
-import Logger from "~/utils/logger.js";
 import { Branch } from "~/enum.js";
+import Logger from "~/utils/logger.js";
+import { validatedAppName } from "~/utils/validated.js";
+import inquirer from "inquirer";
 
 export interface CommandPackages {
   value: Branch;
   name: string;
 }
+
 export interface CommandOptions {
   name: string;
   packages: CommandPackages[];
@@ -22,7 +23,7 @@ const defaultOptions: CommandOptions = {
   ],
 };
 
-export async function command() {
+export async function runCli() {
   try {
     const answers = await inquirer.prompt([
       {
@@ -34,7 +35,7 @@ export async function command() {
       },
       {
         type: "list",
-        name: "packages",
+        name: "branch",
         message: "What template do you want to use?",
         choices: defaultOptions.packages,
       },
