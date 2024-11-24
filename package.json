@@ -1,7 +1,7 @@
 {
   "name": "create-xie392-template",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "my project templates",
   "private": false,
   "files": [
@@ -36,6 +36,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xie392/template-cli.git"
+    "url": "https://github.com/xie392/create-xie392-template.git"
   }
 }
