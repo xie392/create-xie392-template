@@ -5,5 +5,5 @@
 # 命令
 
 ```
-npx create xie392-template
+npm create create-xie392-app
 ```

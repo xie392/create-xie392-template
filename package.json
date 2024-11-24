@@ -1,15 +1,16 @@
 {
-  "name": "xie392-temp-cli",
+  "name": "create-xie392-app",
   "type": "module",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "my project templates",
   "private": false,
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "package.json"
   ],
   "bin": {
-    "xie392-temp-cli": "./dist/index.js"
+    "create-xie392-app": "./dist/index.js"
   },
   "scripts": {
     "build": "tsup",
