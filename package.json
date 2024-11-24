@@ -1,15 +1,15 @@
 {
   "name": "xie392-temp-cli",
   "type": "module",
-  "version": "1.0.4",
-  "description": "",
+  "version": "1.0.5",
+  "description": "my project templates",
   "private": false,
   "files": [
     "dist",
     "README.md"
   ],
   "bin": {
-    "xie392-template": "./dist/index.js"
+    "xie392-temp-cli": "./dist/index.js"
   },
   "scripts": {
     "build": "tsup",
@@ -18,7 +18,7 @@
   },
   "exports": "./dist/index.js",
   "keywords": [],
-  "author": "xie392@ymzdjiang@qq.com",
+  "author": "xie392 <ymzdjiang@qq.com> (https://xie392.cn)",
   "license": "MIT",
   "devDependencies": {
     "@types/degit": "^2.8.6",
@@ -32,5 +32,9 @@
     "degit": "^2.8.4",
     "inquirer": "^12.1.0",
     "ora": "^8.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xie392/template-cli.git"
   }
 }
