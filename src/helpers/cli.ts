@@ -3,24 +3,9 @@ import Logger from "~/utils/logger.js";
 import { validatedAppName } from "~/utils/validated.js";
 import inquirer from "inquirer";
 
-export interface CommandPackages {
-  value: Branch;
-  name: string;
-}
-
-export interface CommandOptions {
-  name: string;
-  packages: CommandPackages[];
-}
-
-const defaultOptions: CommandOptions = {
+const defaultOptions = {
   name: "new-project",
-  packages: [
-    { value: Branch.React, name: "React" },
-    { value: Branch.ReactShadcn, name: "React + Shadcn UI" },
-    { value: Branch.Vue, name: "Vue" },
-    { value: Branch.VueShadcn, name: "Vue + Shadcn UI" },
-  ],
+  packages: Object.entries(Branch).map(([value, name]) => ({ value, name })),
 };
 
 export async function runCli() {

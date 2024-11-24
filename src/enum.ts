@@ -1,6 +1,8 @@
 export enum Branch {
   React = "react",
-  ReactShadcn = "react-shadcn",
   Vue = "vue",
+  Next = "next",
+  ReactShadcn = "react-shadcn",
   VueShadcn = "vue-shadcn",
+  NextShadcn = "next-shadcn",
 }
