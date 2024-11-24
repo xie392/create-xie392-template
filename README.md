@@ -411,7 +411,7 @@ git commit -m "feat: init"
 # 注意：你这里还需要先关联你的远程仓库,根据自己需求更改
 git remote add origin https://github.com/xie392/create-xie392-template.git
 git tag v0.0.1
-git push origin master --tags
+git push origin v0.0.1
 ```
 
 > 如果发布成功或失败都会通过邮箱通知你，你自己也可以看看 `Action` 的进度。
