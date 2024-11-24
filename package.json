@@ -1,5 +1,5 @@
 {
-  "name": "create-xie392-app",
+  "name": "create-xie392-template",
   "type": "module",
   "version": "0.0.0",
   "description": "my project templates",
@@ -10,7 +10,7 @@
     "package.json"
   ],
   "bin": {
-    "create-xie392-app": "./dist/index.js"
+    "create-xie392-template": "./dist/index.js"
   },
   "scripts": {
     "build": "tsup",

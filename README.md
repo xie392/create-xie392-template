@@ -5,5 +5,7 @@
 # 命令
 
 ```
-npm create create-xie392-app
+npm create xie392-template@latest
+# or
+pnpm create xie392-template
 ```
