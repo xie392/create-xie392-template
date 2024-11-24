@@ -1,7 +1,7 @@
 {
   "name": "xie392-temp-cli",
   "type": "module",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "private": false,
   "files": [
@@ -9,7 +9,7 @@
     "README.md"
   ],
   "bin": {
-    "create": "./dist/index.js"
+    "xie392-template": "./dist/index.js"
   },
   "scripts": {
     "build": "tsup",

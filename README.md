@@ -5,5 +5,5 @@
 # 命令
 
 ```
-npx create xie392-temp-cli
+npx create xie392-template
 ```
